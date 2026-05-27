@@ -52,7 +52,7 @@ github:
 "https://github.com/K4KU-TYO",
 
 site:
-" https://k4ku-tyo.github.io/Gerador-de-senhas/"
+"  https://k4ku-tyo.github.io/Gerador-de-senhas/"
 
 },
 
