@@ -49,7 +49,7 @@ descricao:
 "Gerador de senhas seguras",
 
 github:
-"https://github.com/K4KU-TYO",
+"https://github.com/K4KU-TYO/Gerador-de-senhas",
 
 site:
 "  https://k4ku-tyo.github.io/Gerador-de-senhas/"
