@@ -58,16 +58,16 @@ site:
 
 {
 
-nome:"Criptografia",
+nome:"Cripto/Descript",
 
 descricao:
-"Ferramenta de criptografia",
+"Ferramenta de criptografia e descriptografia de senhas",
 
 github:
 "https://github.com/K4KU-TYO",
 
 site:
-"https://k4ku-tyo.github.io/"
+"https://k4ku-tyo.github.io/Cript-Descript/"
 
 }
 
