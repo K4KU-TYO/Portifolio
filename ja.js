@@ -64,7 +64,7 @@ descricao:
 "Ferramenta de criptografia e descriptografia de senhas",
 
 github:
-"https://github.com/K4KU-TYO",
+"https://github.com/K4KU-TYO/Cript-Descript",
 
 site:
 "https://k4ku-tyo.github.io/Cript-Descript/"
