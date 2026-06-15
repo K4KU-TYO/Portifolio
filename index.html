@@ -2,204 +2,224 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Cardoso | Portfólio</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Gabriel Cardoso | Portfólio</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="bg"></div>
+    <nav class="navbar">
 
-<nav class="navbar">
+        <div class="logo">
+            K4KU
+        </div>
 
-<div class="logo">
+        <div class="mobile-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-K4KU
+        <ul class="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#video">Vídeo</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
 
-</div>
+    </nav>
 
-<div class="mobile-btn">
+    <!--Começo-->
 
-<span></span>
-<span></span>
-<span></span>
+    <section id="inicio" class="hero">
 
-</div>
+        <div class="hero-text">
 
-<ul class="nav-links">
+            <h3>Olá, eu sou</h3>
 
-<li><a href="#inicio">Início</a></li>
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projetos">Projetos</a></li>
-<li><a href="#contato">Contato</a></li>
+            <h1>Gabriel Cardoso</h1>
 
-</ul>
+            <h2 id="typing"></h2>
 
-</nav>
+            <p>
+                Estudante de Engenharia de Software com foco em
+                Desenvolvimento Web, Linux, Cibersegurança,
+                Automação e Hardware Hacking.
+            </p>
 
+            <div class="buttons">
 
+                <a href="#projetos" class="btn">
+                    Projetos
+                </a>
 
-<section
-id="inicio"
-class="hero">
+                <a
+                    href="https://github.com/K4KU-TYO"
+                    target="_blank"
+                    class="btn secondary">
 
-<div class="hero-text">
+                    GitHub
 
-<h3>
+                </a>
 
-Olá, eu sou
+            </div>
 
-</h3>
+        </div>
 
-<h1>
+        <div class="hero-image">
 
-Gabriel Cardoso
+            <img
+                src="imagens/ft3.jpg"
+                alt="Gabriel">
 
-</h1>
+        </div>
 
-<h2 id="typing">
+    </section>
 
-</h2>
+    <!-- SOBRE -->
 
-<p>
+    <section id="sobre">
 
-Estudante de Engenharia de Software
-com foco em Desenvolvimento Web,
-Cibersegurança e Hardware Hacking.
+        <h1>Sobre Mim</h1>
 
-</p>
+        <div class="card">
 
-<div class="buttons">
+            <p>
+                Meu nome é Gabriel Cardoso (K4KU).
 
-<a
-href="#projetos"
-class="btn">
+                Desenvolvedor focado em:
 
-Projetos
+                <br><br>
 
-</a>
+                • Desenvolvimento Web <br>
+                • Linux <br>
+                • Cibersegurança <br>
+                • Automação <br>
+                • Hardware Hacking
+            </p>
 
-<a
-target="_blank"
-href="https://github.com/K4KU-TYO"
-class="btn secondary">
+        </div>
 
-GitHub
+    </section>
 
-</a>
+    <!-- SKILLS -->
 
-</div>
+    <section id="skills">
 
-</div>
+        <h1>Skills</h1>
 
+        <div id="skillsContainer"></div>
 
-<div class="hero-image">
+    </section>
 
-<img
-src="imagens/ft3.jpg"
-alt="Gabriel">
+    <!-- PROJETOS -->
 
-</div>
+    <section id="projetos">
 
-</section>
+        <h1>Projetos</h1>
 
+        <div class="cards"></div>
 
+    </section>
 
-<section id="sobre">
+    <!-- VIDEO -->
 
-<h1>
+    <section id="video">
 
-Sobre Mim
+        <h1>Vídeo</h1>
 
-</h1>
+        <div class="card">
 
-<div class="card">
+            <iframe
+                width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/videoseries?list=PLp95aw034Wn8Wi0NViVF58hOpX-m00jyg"
+                title="Vídeo"
+                allowfullscreen>
+            </iframe>
 
-<p>
+        </div>
 
-Meu nome é Gabriel Cardoso (Kaku).
+    </section>
 
-Desenvolvedor focado em Web,
-Linux, Cibersegurança,
-Automação e Hardware Hacking.
+    <!-- CONTATO -->
 
-</p>
+    <section id="contato">
 
-</div>
+        <h1>Contato</h1>
 
-</section>
+        <div class="card">
 
+            <form
+                action="https://formsubmit.co/scripttyo@gmail.com"
+                method="POST">
 
+                <input
+                    type="text"
+                    name="nome"
+                    placeholder="Seu nome"
+                    required>
 
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Seu email"
+                    required>
 
-<section id="skills">
+                <input
+                    type="text"
+                    name="assunto"
+                    placeholder="Assunto"
+                    required>
 
-<h1>
+                <textarea
+                    name="mensagem"
+                    rows="6"
+                    placeholder="Digite sua mensagem"
+                    required></textarea>
 
-Skills
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Nova mensagem do Portfólio">
 
-</h1>
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="false">
 
-<div id="skillsContainer">
+                <button
+                    type="submit"
+                    class="btn">
 
-</div>
+                    Enviar Mensagem
 
-</section>
+                </button>
 
+            </form>
 
+            <br>
 
+            <p>Email: scripttyo@gmail.com</p>
 
-<section id="projetos">
+            <p>GitHub: K4KU-TYO</p>
 
-<h1>
+        </div>
 
-Projetos
+    </section>
 
-</h1>
+    <!--TOP-->
 
-<div class="cards">
+    <button id="topBtn">
+        ↑
+    </button>
 
-</div>
-
-</section>
-
-
-
-
-<section id="contato">
-
-<h1>
-
-Contato
-
-</h1>
-
-<div class="card">
-
-<p>Email: scripttyo@gmail.com</p>
-
-<p>GitHub: K4KU-TYO</p>
-
-</div>
-
-</section>
-
-
-
-<button id="topBtn">
-
-↑
-
-</button>
-
-<script src="ja.js"></script>
+    <script src="ja.js"></script>
 
 </body>
 
