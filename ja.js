@@ -1,4 +1,8 @@
-const skills=[
+
+// SKILLS
+
+
+const skills = [
 
 {
 nome:"HTML",
@@ -39,91 +43,90 @@ cor:"#00ff88"
 ];
 
 
-const projetos=[
+// PROJETOS
+
+const projetos = [
 
 {
-
 nome:"Gerador de Senhas",
 
 descricao:
-"Gerador de senhas seguras",
+"Gerador de senhas seguras com interface moderna.",
 
 github:
 "https://github.com/K4KU-TYO/Gerador-de-senhas",
 
 site:
-"  https://k4ku-tyo.github.io/Gerador-de-senhas/"
-
+"https://k4ku-tyo.github.io/Gerador-de-senhas/"
 },
 
 {
-
 nome:"Cripto/Descript",
 
 descricao:
-"Ferramenta de criptografia e descriptografia de senhas",
+"Ferramenta para criptografia e descriptografia de textos.",
 
 github:
 "https://github.com/K4KU-TYO/Cript-Descript",
 
 site:
 "https://k4ku-tyo.github.io/Cript-Descript/"
-
 }
 
 ];
 
+//  MOBILE
 
-// menu
+const mobileBtn =
+document.querySelector(".mobile-btn");
 
-document
-.querySelector(".mobile-btn")
-.onclick=()=>{
+const navLinks =
+document.querySelector(".nav-links");
 
-document
-.querySelector(".nav-links")
-.classList.toggle(
+mobileBtn.onclick = () => {
+
+navLinks.classList.toggle(
 "active"
 );
 
 };
 
+// EFEITO
 
-// typing
+const palavras = [
 
-const palavras=[
 "Desenvolvedor Web",
 "Cibersegurança",
 "Hardware Hacking"
+
 ];
 
-let p=0;
-let l=0;
+let palavraAtual = 0;
+let letraAtual = 0;
 
-function digitar(){
+function digitar() {
 
-const el=
-document.querySelector(
-"#typing"
-);
+const elemento =
+document.querySelector("#typing");
 
-if(
-l<
-palavras[p].length
-){
+if (
+letraAtual <
+palavras[palavraAtual].length
+) {
 
-el.innerHTML+=
-palavras[p]
-.charAt(l);
+elemento.innerHTML +=
+palavras[palavraAtual]
+.charAt(letraAtual);
 
-l++;
+letraAtual++;
 
 setTimeout(
 digitar,
 100
 );
 
-}else{
+}
+else {
 
 setTimeout(
 apagar,
@@ -134,33 +137,34 @@ apagar,
 
 }
 
-function apagar(){
+function apagar() {
 
-const el=
-document.querySelector(
-"#typing"
-);
+const elemento =
+document.querySelector("#typing");
 
-if(l>0){
+if (letraAtual > 0) {
 
-el.innerHTML=
-palavras[p]
+elemento.innerHTML =
+palavras[palavraAtual]
 .substring(
 0,
-l-1
+letraAtual - 1
 );
 
-l--;
+letraAtual--;
 
 setTimeout(
 apagar,
 50
 );
 
-}else{
+}
+else {
 
-p=(p+1)
-%palavras.length;
+palavraAtual =
+(palavraAtual + 1)
+%
+palavras.length;
 
 digitar();
 
@@ -171,24 +175,24 @@ digitar();
 digitar();
 
 
-// skills
+// SKILLS 
 
-const container=
+const skillsContainer =
 document.querySelector(
 "#skillsContainer"
 );
 
-skills.forEach(s=>{
+skills.forEach(skill => {
 
-container.innerHTML+=`
+skillsContainer.innerHTML += `
 
 <div class="skill">
 
 <div class="skill-header">
 
-<span>${s.nome}</span>
+<span>${skill.nome}</span>
 
-<span>${s.nivel}%</span>
+<span>${skill.nivel}%</span>
 
 </div>
 
@@ -196,9 +200,8 @@ container.innerHTML+=`
 
 <div
 class="progresso"
-data-width="${s.nivel}"
-style="background:${s.cor}">
-
+data-width="${skill.nivel}"
+style="background:${skill.cor}">
 </div>
 
 </div>
@@ -210,69 +213,73 @@ style="background:${s.cor}">
 });
 
 
-const barras=
+// ANIMAÇÃO DAS BARRAS
+
+const barras =
 document.querySelectorAll(
 ".progresso"
 );
 
-const obs=
+const observer =
 new IntersectionObserver(
-(entries)=>{
+(entries) => {
 
-entries.forEach(
-e=>{
+entries.forEach(entry => {
 
-if(
-e.isIntersecting
-){
+if (
+entry.isIntersecting
+) {
 
-e.target.style.width=
-e.target.dataset.width+"%";
+entry.target.style.width =
+entry.target.dataset.width
++ "%";
 
 }
 
 });
 
-});
-
-barras.forEach(
-b=>obs.observe(b)
+}
 );
 
+barras.forEach(barra => {
 
-// projetos
+observer.observe(barra);
 
-const cards=
+});
+
+// PROJETOS
+
+const cards =
 document.querySelector(
 ".cards"
 );
 
-projetos.forEach(p=>{
+projetos.forEach(projeto => {
 
-cards.innerHTML+=`
+cards.innerHTML += `
 
 <div class="card">
 
-<h2>${p.nome}</h2>
+<h2>${projeto.nome}</h2>
 
-<p>${p.descricao}</p>
+<br>
+
+<p>
+${projeto.descricao}
+</p>
 
 <a
 class="btn"
 target="_blank"
-href="${p.github}">
-
+href="${projeto.github}">
 Ver Código
-
 </a>
 
 <a
 class="btn secondary"
 target="_blank"
-href="${p.site}">
-
+href="${projeto.site}">
 Abrir Site
-
 </a>
 
 </div>
@@ -282,33 +289,63 @@ Abrir Site
 });
 
 
-// topo
+// BOTÃO TOPO
 
-const topBtn=
+const topBtn =
 document.querySelector(
 "#topBtn"
 );
 
 window.addEventListener(
 "scroll",
-()=>{
+() => {
 
-topBtn.style.display=
-window.scrollY>300
+topBtn.style.display =
+window.scrollY > 300
 ?
 "block"
 :
 "none";
 
-});
+}
+);
 
-topBtn.onclick=()=>{
+topBtn.onclick = () => {
 
 window.scrollTo({
 
 top:0,
+
 behavior:"smooth"
 
 });
 
 };
+
+// MENSAGEM DE SUCESSO
+// FORMULÁRIO
+
+const formulario =
+document.querySelector("form");
+
+if(formulario){
+
+formulario.addEventListener(
+"submit",
+function(){
+
+alert(
+"Mensagem enviada! Verifique seu e-mail para confirmar o envio caso seja a primeira vez usando o FormSubmit."
+);
+
+}
+);
+
+}
+
+// ANO ATUAL
+
+console.log(
+"Portfólio carregado em " +
+new Date().getFullYear()
+);
