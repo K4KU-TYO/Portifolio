@@ -1,6 +1,4 @@
-
 // SKILLS
-
 
 const skills = [
 
@@ -42,7 +40,6 @@ cor:"#00ff88"
 
 ];
 
-
 // PROJETOS
 
 const projetos = [
@@ -75,7 +72,7 @@ site:
 
 ];
 
-//  MOBILE
+//MOBILE
 
 const mobileBtn =
 document.querySelector(".mobile-btn");
@@ -91,7 +88,7 @@ navLinks.classList.toggle(
 
 };
 
-// EFEITO
+// EFEITO DIGITAÇÃO
 
 const palavras = [
 
@@ -174,8 +171,7 @@ digitar();
 
 digitar();
 
-
-// SKILLS 
+// SKILLS
 
 const skillsContainer =
 document.querySelector(
@@ -212,8 +208,7 @@ style="background:${skill.cor}">
 
 });
 
-
-// ANIMAÇÃO DAS BARRAS
+// ANIMAÇÃO
 
 const barras =
 document.querySelectorAll(
@@ -288,8 +283,9 @@ Abrir Site
 
 });
 
-
+// =====================
 // BOTÃO TOPO
+// =====================
 
 const topBtn =
 document.querySelector(
@@ -322,30 +318,117 @@ behavior:"smooth"
 
 };
 
-// MENSAGEM DE SUCESSO
 // FORMULÁRIO
 
-const formulario =
-document.querySelector("form");
+const form =
+document.querySelector(
+"#contatoForm"
+);
 
-if(formulario){
+const mensagem =
+document.querySelector(
+"#mensagem"
+);
 
-formulario.addEventListener(
+if(form){
+
+form.addEventListener(
 "submit",
-function(){
+function(event){
 
-alert(
-"Mensagem enviada! Verifique seu e-mail para confirmar o envio caso seja a primeira vez usando o FormSubmit."
-);
+event.preventDefault();
+
+const nome =
+document.querySelector(
+"#nome"
+).value.trim();
+
+const email =
+document.querySelector(
+"#email"
+).value.trim();
+
+const assunto =
+document.querySelector(
+"#assunto"
+).value.trim();
+
+const texto =
+document.querySelector(
+"#mensagemTexto"
+).value.trim();
+
+// Nome
+
+if(nome.length < 3){
+
+mensagem.innerHTML =
+"Nome deve possuir pelo menos 3 caracteres.";
+
+mensagem.style.color =
+"orange";
+
+return;
 
 }
-);
+
+// Email
+
+const regexEmail =
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(
+!regexEmail.test(email)
+){
+
+mensagem.innerHTML =
+"Email inválido.";
+
+mensagem.style.color =
+"#ff4444";
+
+return;
 
 }
 
-// ANO ATUAL
+// Assunto
 
-console.log(
-"Portfólio carregado em " +
-new Date().getFullYear()
-);
+if(assunto.length < 3){
+
+mensagem.innerHTML =
+"O assunto deve possuir pelo menos 3 caracteres.";
+
+mensagem.style.color =
+"#ff4444";
+
+return;
+
+}
+
+// Mensagem
+
+if(texto.length < 10){
+
+mensagem.innerHTML =
+"A mensagem deve possuir pelo menos 10 caracteres.";
+
+mensagem.style.color =
+"#ff4444";
+
+return;
+
+}
+
+// Sucesso
+
+mensagem.innerHTML =
+`Obrigado pelo contato, ${nome}! Sua mensagem foi enviada com sucesso.`;
+
+mensagem.style.color =
+"#00ff88";
+
+form.reset();
+
+});
+
+}
