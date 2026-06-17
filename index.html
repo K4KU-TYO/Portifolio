@@ -34,7 +34,7 @@
 
     </nav>
 
-    <!--Começo-->
+    <!-- HERO -->
 
     <section id="inicio" class="hero">
 
@@ -74,7 +74,7 @@
         <div class="hero-image">
 
             <img
-                src="imagens/ft3.jpg"
+                src="imagens/foto.jpg"
                 alt="Gabriel">
 
         </div>
@@ -155,55 +155,45 @@
 
         <div class="card">
 
-            <form
-                action="https://formsubmit.co/scripttyo@gmail.com"
-                method="POST">
+           <form id="contatoForm">
 
-                <input
-                    type="text"
-                    name="nome"
-                    placeholder="Seu nome"
-                    required>
+    <input
+    type="text"
+    id="nome"
+    placeholder="Seu nome"
+    required>
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Seu email"
-                    required>
+    <input
+    type="email"
+    id="email"
+    placeholder="Seu email"
+    required>
 
-                <input
-                    type="text"
-                    name="assunto"
-                    placeholder="Assunto"
-                    required>
+    <input
+    type="text"
+    id="assunto"
+    placeholder="Assunto"
+    required>
 
-                <textarea
-                    name="mensagem"
-                    rows="6"
-                    placeholder="Digite sua mensagem"
-                    required></textarea>
+    <textarea
+    id="mensagemTexto"
+    rows="6"
+    placeholder="Digite sua mensagem"
+    required></textarea>
 
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="Nova mensagem do Portfólio">
+    <button
+    type="submit"
+    class="btn">
 
-                <input
-                    type="hidden"
-                    name="_captcha"
-                    value="false">
+        Enviar Mensagem
 
-                <button
-                    type="submit"
-                    class="btn">
+    </button>
 
-                    Enviar Mensagem
+</form>
 
-                </button>
+<div id="mensagem"></div>
 
-            </form>
-
-            <br>
+    <br>
 
             <p>Email: scripttyo@gmail.com</p>
 
@@ -213,7 +203,7 @@
 
     </section>
 
-    <!--TOP-->
+    <!-- TOPO -->
 
     <button id="topBtn">
         ↑
